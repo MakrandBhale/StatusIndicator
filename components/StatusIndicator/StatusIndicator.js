@@ -19,13 +19,14 @@ class StatusIndicator extends React.Component {
   
   render() { 
     let increment = FULL_WIDTH / test.length;
-    let initialPosition = 0;
+    let initialPosition = 0 - increment;
     return ( 
         <View dimens={TRACK_HEIGHT} style={styles.parent}>
             {
                 test.map(element => {
-                    <Bulb dimens={TRACK_HEIGHT} isSelected={false} position={initialPosition} key={element}/> 
                     initialPosition = initialPosition + increment;
+
+                    return <Bulb dimens={TRACK_HEIGHT} isSelected={false} position={initialPosition} key={element}/> 
 
                 })
             }
